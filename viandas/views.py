@@ -1,6 +1,14 @@
 from viandas.models import Dish, Offer, Order
-from viandas.serializers import DishSerializer, OfferSerializer, OrderSerializer
+from django.contrib.auth.models import User
+from viandas.serializers import DishSerializer, OfferSerializer, OrderSerializer, UserSerializer
 from rest_framework import viewsets
+
+
+
+class UserViewSet(viewsets.ModelViewSet):
+
+	queryset = User.objects.all()
+	serializer_class = UserSerializer
 
 
 
